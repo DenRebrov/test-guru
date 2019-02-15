@@ -26,9 +26,8 @@ module TestGuru
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :ru
     config.time_zone = 'Moscow'
-    config.version = '0.1.0'
 
-        # Don't generate system test files.
+    # Don't generate system test files.
     config.generators.system_tests = nil
   end
 end
