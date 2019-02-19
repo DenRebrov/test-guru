@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+category = Category.create(title: 'Ruby')
+test = Test.create(category_id: category.id, title: 'Ruby Interview Questions', level: 0)
+question = Question.create(test_id: test_id, body: 'How will you define Ruby programming Language?')
+answer = Answer.create(question_id: question.id, correct: false)
