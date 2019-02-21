@@ -5,22 +5,18 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
-  scope :easy, -> { where(level: 0..1).order(level: :asc)}
-  scope :medium, -> { where(level: 2..4).order(level: :asc)}
-  scope :hard, -> { where(level: 5..Float::INFINITY).order(level: :asc)}
-  scope :categories_by_name, -> (name) { joins(:category).where(categories: {title: name}).order('tests.title DESC').pluck('tests.title') }
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :categories_by_name, -> (name) { joins(:category).where(categories: {title: name}) }
 
-  validates :title, presence: true,
-                    uniqueness: true
-
-  validates :level, uniqueness: true,
-                    numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
-
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
   validate :validate_max_level, on: :create
 
-  #def self.categories_by_name(name)
-  #  Test.joins(:category).where(categories: {title: name}).order('tests.title DESC').pluck('tests.title')
-  #end
+  def self.by_name(name)
+    categories_by_name(name).order(title: :desc).pluck(:title)
+  end
 
   private
 

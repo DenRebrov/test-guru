@@ -10,6 +10,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_max_answers
-    errors.add(:answer, "Не больше #{MAX_ANSWERS} ответов") if question.answers.size > MAX_ANSWERS
+    errors.add(:answer, "Не больше #{MAX_ANSWERS} ответов") if question.answers.size >= MAX_ANSWERS
   end
 end
