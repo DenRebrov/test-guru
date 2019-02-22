@@ -20,12 +20,12 @@ class QuestionsController < ApplicationController
 
   # POST /tests/id/questions
   def create
-    question = @test.questions.create(question_params)
+    question = @test.questions.new(question_params)
 
     if question.save
       render plain: question.inspect
     else
-      redirect_to root_path
+      render 'questions/show', alert: 'Вопрос не сохранен'
     end
   end
 
