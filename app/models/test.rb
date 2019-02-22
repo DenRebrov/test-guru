@@ -5,9 +5,9 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
-  scope :easy, -> { where(level: 0..1) }
+  scope :easy,   -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
-  scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :hard,   -> { where(level: 5..Float::INFINITY) }
   scope :categories_by_name, -> (name) { joins(:category).where(categories: {title: name}) }
 
   validates :title, presence: true, uniqueness: { scope: :level }
