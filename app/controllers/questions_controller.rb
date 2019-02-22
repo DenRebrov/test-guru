@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index]
+  before_action :find_test, only: %i[index create]
   before_action :find_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -20,10 +20,13 @@ class QuestionsController < ApplicationController
 
   # POST /tests/id/questions
   def create
-    render plain: "Создан вопрос '#{params[:question][:body]}'"
+    question = @test.questions.create(question_params)
 
-    #question = Question.create(question_params)
-    #render plain: question.inspect
+    if question.save
+      render plain: question.inspect
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
@@ -47,6 +50,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Вопрос не найден'
+    render plain: 'Вопрос не найден', status: 404
   end
 end

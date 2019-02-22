@@ -1,6 +1,8 @@
 class TestsController < ApplicationController
 
   def index
-    render plain: 'All tests'
+    @tests = Test.all
+
+    render plain: @tests.inspect
   end
 end
