@@ -1,21 +1,26 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index create]
-  before_action :find_question, only: %i[show destroy]
+
+  before_action :find_test, only: %i[index new create]
+  before_action :find_question, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   # GET /tests/id/questions
   def index
-    render plain: @test.questions.inspect
   end
 
   # GET /questions/id
   def show
-    render plain: @question.body
+    @answers = @question.answers
   end
 
   # GET /tests/id/questions/new
   def new
+    @question = @test.questions.new
+  end
+
+  # GET /questions/id/edit
+  def edit
   end
 
   # POST /tests/id/questions
@@ -23,16 +28,25 @@ class QuestionsController < ApplicationController
     question = @test.questions.new(question_params)
 
     if question.save
-      render plain: question.inspect
+      redirect_to question
     else
-      render 'questions/show', alert: 'Вопрос не сохранен'
+      render :new
+    end
+  end
+
+  # PATCH /questions/id/edit
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
 
-    render plain: 'Вы удалили вопрос'
+    redirect_to tests_path
   end
 
   private
