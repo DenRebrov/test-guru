@@ -1,20 +1,18 @@
 module QuestionsHelper
 
-  def question_header
-    str = ''
-    if params[:action] == 'new'
-      str = "Create New '#{@test.title}' Question"
+  def question_header(question)
+    if question.new_record?
+      "Create New '#{@test.title}' Question"
     else
-      str = "Edit '#{@question.test.title}' Question"
+      "Edit '#{question.test.title}' Question"
     end
-    str
   end
 
   def current_year
-    Time.now.strftime("%Y")
+    Time.current.year
   end
 
   def github_url(author, repo)
-    "https://github.com/#{author}/#{repo}"
+    link_to 'Test-Guru', "https://github.com/#{author}/#{repo}"
   end
 end
