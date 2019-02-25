@@ -1,1 +1,9 @@
-<h1>'<%= @test_passage.test.title %>' Тест завершен!</h1>
+<h1>Тест по теме '<%= @test_passage.test.title %>' завершен</h1>
+
+<% if success?(@test_passage) %>
+  <h2 style="color: green">Поздравляем! Вы успешно сдали тест!</h2>
+<% else %>
+  <h2 style="color: red">К сожалению вы не сдали... (((</h2>
+<% end %>
+
+<%= link_to 'Вернуться к списку тестов', tests_path %>

@@ -18,6 +18,12 @@ class Test < ApplicationRecord
     categories_by_name(name).order(title: :desc).pluck(:title)
   end
 
+  def correct_answers_count
+    sum = 0
+    questions.each { |question| sum += question.answers.correct.count }
+    sum
+  end
+
   private
 
   def validate_max_level
