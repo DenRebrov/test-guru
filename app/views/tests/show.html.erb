@@ -1,29 +1,16 @@
 <p>
-  <strong>Название:</strong>
-  <%=	@test.title %>
+  <h1>Название теста: <%=	@test.title %></h1>
 </p>
 
 <p>
-  <strong>Уровень:</strong>
-  <%=	@test.level %>
+  <h1>Уровень: <%= test_level(@test) %></h1>
 </p>
 
 <p>
-  <strong>Список вопросов:</strong><br>
-
-  <p>
-    <%= link_to 'Новый вопрос', new_test_question_path(@test.id) %>
-  </p>
-
-  <table>
-    <tr>
-      <th>Название</th>
-      <th colspan="3">Действия</th>
-    </tr>
-
-    <%= render @questions %>
-  </table>
+  <h2>Вопросы:</h2>
+  <p><%= link_to 'Новый вопрос', new_test_question_path(@test.id) %></p>
+  <ol><%= render @questions %></ol>
 </p>
 
-<%= link_to 'Редактировать', edit_test_path(@test) %> |
+<%= link_to 'Edit', edit_test_path(@test) %> |
 <%= link_to 'Назад', tests_path %>

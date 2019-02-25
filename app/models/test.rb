@@ -1,9 +1,9 @@
 class Test < ApplicationRecord
-  belongs_to :category, optional:true
-  belongs_to :author, class_name: 'User', optional:true
-  has_many :questions, dependent: :destroy
-  has_many :tests_users
-  has_many :users, through: :tests_users
+  belongs_to :category
+  belongs_to :author, class_name: 'User', foreign_key: :user_id, optional:true
+  has_many :questions#, dependent: :destroy
+  has_many :test_passages
+  has_many :users, through: :test_passages
 
   scope :easy,   -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
@@ -16,6 +16,12 @@ class Test < ApplicationRecord
 
   def self.by_name(name)
     categories_by_name(name).order(title: :desc).pluck(:title)
+  end
+
+  def correct_answers_count
+    sum = 0
+    questions.each { |question| sum += question.answers.correct.count }
+    sum
   end
 
   private
