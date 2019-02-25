@@ -5,21 +5,17 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  # GET /questions/id
   def show
     @answers = @question.answers
   end
 
-  # GET /tests/id/questions/new
   def new
     @question = @test.questions.new
   end
 
-  # GET /questions/id/edit
   def edit
   end
 
-  # POST /tests/id/questions
   def create
     question = @test.questions.new(question_params)
 
@@ -30,7 +26,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # PATCH /questions/id/edit
   def update
     if @question.update(question_params)
       redirect_to @question

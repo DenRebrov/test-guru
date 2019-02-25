@@ -1,9 +1,9 @@
 class Answer < ApplicationRecord
   MAX_ANSWERS = 4
 
-  belongs_to :question
+  belongs_to :question#, optional: true
 
-  scope :correct_answers, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   validate :validate_max_answers, on: :create
 

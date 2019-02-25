@@ -1,8 +1,7 @@
 <tr>
-  <td><%= test.title %></td>
+  <td><%= link_to "#{test.title}", test_path(test) %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.size %></td>
-  <td><%= link_to 'Show', test_path(test) %></td>
   <td><%= link_to 'Edit', edit_test_path(test) %></td>
   <td>
     <%= link_to 'Delete',
@@ -10,4 +9,5 @@
                 method: :delete,
                 data: { confirm: 'Вы уверены?' } %>
   </td>
+  <td><%= button_to 'Start!', start_test_path(test.id) %></td>
 </tr>
