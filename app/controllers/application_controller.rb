@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
+      #session[:url] = ??????????????
       return redirect_to login_path, alert: 'Проверь свои Email и Password пожалуйста'
     end
 

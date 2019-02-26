@@ -8,9 +8,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <p>
+  <body>
+    <h3><%= link_to 'Test Guru', root_path %></h3>
     <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.email %></b>Guru</p>
+      <p class="nav user">
+        Welcome, <b><%= current_user.name %> </b>Guru |
+        <%= link_to 'Выход', logout_path, data: { method: :delete } %>
+      </p>
+    <% else %>
+      <p class="nav user">
+        <%= link_to 'Регистрация', signup_path %> |
+        <%= link_to 'Вход', login_path %>
+      </p>
     <% end %>
 
     <%= yield %>
