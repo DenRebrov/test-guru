@@ -6,9 +6,12 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path, noice: 'Добро пожаловать в Guru!'
+      if session[:url]
+        redirect_to session[:url]
+      else
+        redirect_to root_path, noice: 'Добро пожаловать в Guru!'
+      end
     else
-      #flash.now[:alert] = 'Проверьте свои Email и Password пожалуйста'
       render :new, alert: 'Проверьте свои Email и Password пожалуйста'
     end
   end
