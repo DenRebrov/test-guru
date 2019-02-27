@@ -9,8 +9,8 @@
 <p>
   <h2>Вопросы:</h2>
   <p><h3><%= link_to 'Новый вопрос', new_test_question_path(@test.id) %></h3></p>
-  <ol><%= render @questions %></ol>
+  <ol><%= render partial: 'questions/question', collection: @questions %></ol>
 </p>
 
-<%= link_to 'Edit', edit_test_path(@test) %> |
-<%= link_to 'Назад', tests_path %>
+<%= link_to 'Edit', edit_admin_test_path(@test) %> |
+<%= link_to 'Назад', admin_tests_path %>
