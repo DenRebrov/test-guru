@@ -8,8 +8,8 @@
 
 <p>
   <h2>Вопросы:</h2>
-  <p><h3><%= link_to 'Новый вопрос', new_test_question_path(@test.id) %></h3></p>
-  <ol><%= render partial: 'questions/question', collection: @questions %></ol>
+  <p><h3><%= link_to 'Новый вопрос', new_admin_test_question_path(@test.id) %></h3></p>
+  <ol><%= render partial: 'admin/questions/question', collection: @questions %></ol>
 </p>
 
 <%= link_to 'Edit', edit_admin_test_path(@test) %> |

@@ -18,9 +18,10 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
+    @test.author = current_user if admin?
 
     if @test.save
-      redirect_to @test
+      redirect_to admin_tests_path, notice: "Добавлен новый тест! Автор: #{@test.author.first_name} #{@test.author.last_name}"
     else
       render :new
     end
@@ -28,7 +29,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to admin_tests_path, notice: 'Тест обновлен.'
     else
       render :edit
     end
@@ -36,12 +37,12 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to tests_path
+    redirect_to admin_tests_path, notice: 'Тест удален.'
   end
 
   def start
     current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
+    redirect_to current_user.test_passage(@test), notice: "Начался тест '#{@test.title}'"
   end
 
   private
