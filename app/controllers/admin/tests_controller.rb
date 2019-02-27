@@ -17,8 +17,7 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
-    @test.author = current_user if admin?
+    @test = current_user.authored_tests.new(test_params)
 
     if @test.save
       redirect_to admin_tests_path, notice: "Добавлен новый тест! Автор: #{@test.author.first_name} #{@test.author.last_name}"
@@ -38,11 +37,6 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: 'Тест удален.'
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test), notice: "Начался тест '#{@test.title}'"
   end
 
   private

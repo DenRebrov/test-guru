@@ -5,13 +5,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def admin?
-    current_user.is_a?(Admin)
-  end
-
   def after_sign_in_path_for(user)
     flash[:notice] = "Привет, #{user.first_name}"
-    admin? ? sing_in_url = admin_tests_path : sing_in_url = root_path
+    user.admin? ? admin_tests_path : root_path
   end
 
   def configure_permitted_parameters
