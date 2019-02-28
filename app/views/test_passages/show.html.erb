@@ -1,5 +1,5 @@
-<h1>Проходим тест по теме: '<%= @test_passage.test.title %>'</h1>
-<h2>Вопрос №: <%= @test_passage.question_number %> из <%= @test_passage.total_questions %> </h2>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<h2><%= t('.counter', number: @test_passage.question_number, total: @test_passage.total_questions) %></h2>
 
 <b><%= @test_passage.current_question.body %></b>
 

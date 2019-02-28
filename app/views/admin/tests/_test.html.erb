@@ -2,11 +2,11 @@
   <td><%= link_to "#{test.title}", admin_test_path(test) %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.size %></td>
-  <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
+  <td><%= link_to t('.edit'), edit_admin_test_path(test) %></td>
   <td>
-    <%= link_to 'Delete',
+    <%= link_to t('.delete'),
                 admin_test_path(test),
                 method: :delete,
-                data: { confirm: 'Вы уверены?' } %>
+                data: { confirm: t('.choice') } %>
   </td>
 </tr>
