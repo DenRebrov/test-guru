@@ -1,0 +1,103 @@
+ru:
+  hello: "Привет мир"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+      test_passage:
+        next: "Дальше"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выбери категорию"
+
+  layouts:
+    application:
+      welcome: "Добро пожаловать %{user_name} Гуру"
+      log_out: "Выход"
+      sign_up: "Регистрация"
+      log_in: "Вход"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+      actions: "Действия"
+    start:
+      begin: "Начался тест '%{title}'"
+    test:
+      start: "Начать"
+
+  test_passages:
+    result:
+      header: "Тест %{title} завершен"
+      congratulations: "Поздравляем! Вы успешно сдали тест!"
+      lose: "К сожалению вы не сдали... ((("
+      back: "Вернуться к списку тестов"
+    show:
+      header: "Проходим тест по теме: %{title}"
+      counter: "Вопрос № %{number} из %{total}"
+    update:
+      completed: "Тест завершен"
+
+  admin:
+    nav:
+      header: "Панель администратора TestGuru"
+      welcome: "Добро пожаловать"
+      guru: "Гуру"
+      logout: "Выход"
+    tests:
+      index:
+        header: "Доступные тесты"
+        new_test: "Новый тест"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
+      show:
+        title: "Название теста: %{title}"
+        level: "Уровень: %{level}"
+        questions: "Вопросы:"
+        new_question: "Новый вопрос"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        create: "Создать новый тест"
+        back: "Назад"
+      edit:
+        header: "Редактировать %{title}"
+        back: "Назад"
+      create:
+        success: "Тест создан"
+      update:
+        success: "Тест обновлен"
+      destroy:
+        success: "Тест удален"
+      test:
+        choice: "Вы уверены?"
+        edit: "Редактировать"
+        delete: "Удалить"
+
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы завершили тест на TestGuru"
+
+
+
+

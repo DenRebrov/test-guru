@@ -12,13 +12,13 @@
     <h3><%= link_to 'Test Guru', root_path %></h3>
     <% if user_signed_in? %>
       <p class="nav user">
-        Welcome, <b><%= current_user.name %> </b>Guru |
-        <%= link_to 'Выход', destroy_user_session_path, data: { method: :delete } %>
+        <%= t('.welcome', user_name: current_user.name) %> |
+        <%= link_to t('.log_out'), destroy_user_session_path, data: { method: :delete } %>
       </p>
     <% else %>
       <p class="nav user">
-        <%= link_to 'Регистрация', user_session_path %> |
-        <%= link_to 'Вход', new_user_session_path %>
+        <%= link_to t('.sign_up'), user_session_path %> |
+        <%= link_to t('.log_in'), new_user_session_path %>
       </p>
     <% end %>
 
