@@ -52,6 +52,9 @@ en:
       counter: "Question № %{number} of %{total}"
     update:
       completed: "Test completed"
+    gist:
+      success: "Gist was succesfully created!"
+      failure: "An error occurred while saving gist"
 
   admin:
     nav:

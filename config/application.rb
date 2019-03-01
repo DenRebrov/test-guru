@@ -32,6 +32,8 @@ module TestGuru
 
     config.time_zone = 'Moscow'
 
+    config.autoload_paths << "#{Rails.root}/lib/clients"
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end

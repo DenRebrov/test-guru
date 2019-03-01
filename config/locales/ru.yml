@@ -54,6 +54,9 @@ ru:
       counter: "Вопрос № %{number} из %{total}"
     update:
       completed: "Тест завершен"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     nav:
