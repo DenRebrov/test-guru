@@ -1,13 +1,9 @@
-.flash {
-  border: 2px solid;
-  padding: 10px;
-  border-radius: 5px;
+.alert-notice {
+    background-color: #3c85e0;
+    color: white;
 }
 
-.flash.alert {
-  border-color: #ef2727;
-}
-
-.flash.notice {
-    border-color: #3c85e0;
+.alert-alert {
+    background-color: indianred;
+    color: white;
 }

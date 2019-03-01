@@ -55,8 +55,7 @@ en:
 
   admin:
     nav:
-      header: "Admin panel TestGuru"
-      welcome: "Welcome"
+      header: "Admin panel TestGuru %{admin_name}"
       guru: "Guru"
       logout: "Exit"
     tests:
