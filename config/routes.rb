@@ -27,5 +27,7 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+
+    get 'gists/index'
   end
 end

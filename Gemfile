@@ -36,6 +36,8 @@ gem 'turbolinks', '~> 5'
 gem 'devise', '~> 4.0'
 
 gem 'faraday'
+gem 'octokit', '~> 4.0'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'rails-i18n', '~> 5.0.0'
 
