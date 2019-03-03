@@ -31,6 +31,8 @@ ru:
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
 
+  description: "Вопрос о %{title} для TestGuru"
+
   tests:
     index:
       header: "Доступные тесты"
@@ -52,14 +54,19 @@ ru:
     show:
       header: "Проходим тест по теме: %{title}"
       counter: "Вопрос № %{number} из %{total}"
+      gist_question: "Гист вопрос"
     update:
       completed: "Тест завершен"
+    gist:
+      success: "Gist успешно сохранен! %{gist_url}"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     nav:
       header: "Панель администратора TestGuru %{admin_name}"
       guru: "Гуру"
       logout: "Выход"
+      gists_table: "Гисты"
     tests:
       index:
         header: "Доступные тесты"
@@ -91,6 +98,12 @@ ru:
         choice: "Вы уверены?"
         edit: "Редактировать"
         delete: "Удалить"
+    gists:
+      index:
+        header: "Все гисты"
+        question: "Вопрос"
+        gist_url: "Ссылка на гист"
+        user: "Почта пользователя"
 
 
   tests_mailer:

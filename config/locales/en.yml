@@ -29,6 +29,8 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
+  description: "A question about %{title} from TestGuru"
+
   tests:
     index:
       header: "Tricky Tests"
@@ -50,14 +52,19 @@ en:
     show:
       header: "Pass the test on the topic: %{title}"
       counter: "Question № %{number} of %{total}"
+      gist_question: "Gist Question"
     update:
       completed: "Test completed"
+    gist:
+      success: "Gist was succesfully created! %{gist_url}"
+      failure: "An error occurred while saving gist"
 
   admin:
     nav:
       header: "Admin panel TestGuru %{admin_name}"
       guru: "Guru"
       logout: "Exit"
+      gists_table: "Gists"
     tests:
       index:
         header: "Tricky Tests"
@@ -68,7 +75,7 @@ en:
         actions: "Actions"
       show:
         title: "Test title: %{title}"
-        level: "Уровень: %{level}"
+        level: "Level: %{level}"
         questions: "Questions:"
         new_question: "New question"
         edit: "Edit"
@@ -89,6 +96,12 @@ en:
         choice: "Are you sure?"
         edit: "Edit"
         delete: "Delete"
+    gists:
+      index:
+        header: "Gists"
+        question: "Question"
+        gist_url: "Gist url"
+        user: "User Email"
 
   tests_mailer:
     completed_test:
