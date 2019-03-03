@@ -10,10 +10,6 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  #def response?
-  #  @client.last_response.status >= 200 && @client.last_response.status < 300
-  #end
-
   private
 
   def gist_params

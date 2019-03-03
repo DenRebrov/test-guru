@@ -2,8 +2,3 @@ class Gist < ApplicationRecord
   belongs_to :user
   belongs_to :question
 end
-
-# user.gists
-# question.gists
-# gist.user
-# gist.question
