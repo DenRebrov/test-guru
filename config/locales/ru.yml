@@ -24,6 +24,12 @@ ru:
       log_in: "Вход"
 
   shared:
+    nav:
+      welcome: "Добро пожаловать %{user_name}"
+      admin_panel: "Панель админа"
+      log_out: "Выйти"
+      sign_up: "Регистрация"
+      log_in: "Вход"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -63,7 +69,9 @@ ru:
 
   admin:
     nav:
-      header: "Панель администратора TestGuru %{admin_name}"
+      header: "Панель администратора TestGuru"
+      welcome: "Добро пожаловать %{admin_name}"
+      admin_panel: "Панель админа"
       guru: "Гуру"
       logout: "Выход"
       gists_table: "Гисты"

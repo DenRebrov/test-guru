@@ -2,7 +2,8 @@
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand', style: 'color: white' %>
 
   <span class="navbar-text">
-    <b><%= t('.header', admin_name: current_user.first_name) %></b>|
+    <b><%= t('.header') %></b>
+    <b><%= t('.welcome', admin_name: current_user.first_name) %></b> |
     <%= link_to t('.admin_panel'), admin_tests_path, style: 'color: white' %> |
     <%= link_to t('.gists_table'), admin_gists_index_path, data: { method: :get }, style: 'color: white' %> |
     <%= link_to t('.logout'), destroy_user_session_path, data: { method: :delete }, style: 'color: white' %>

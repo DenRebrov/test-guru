@@ -24,6 +24,12 @@ en:
       log_in: "log in"
 
   shared:
+    nav:
+      welcome: "Welcome %{user_name}"
+      admin_panel: "Admin panel"
+      log_out: "Log out"
+      sign_up: "Sign up"
+      log_in: "Log in"
     errors:
       header:
         one: "%{count} error detected"
@@ -61,7 +67,9 @@ en:
 
   admin:
     nav:
-      header: "Admin panel TestGuru %{admin_name}"
+      header: "Admin panel TestGuru"
+      welcome: "Welcome %{admin_name}"
+      admin_panel: "Admin panel"
       guru: "Guru"
       logout: "Exit"
       gists_table: "Gists"
