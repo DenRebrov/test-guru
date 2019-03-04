@@ -100,12 +100,16 @@ ru:
         success: "Тест создан"
       update:
         success: "Тест обновлен"
+      update_inline:
+        success: "Тест обновлен"
       destroy:
         success: "Тест удален"
       test:
         choice: "Вы уверены?"
         edit: "Редактировать"
         delete: "Удалить"
+      form_inline:
+        submit: "ОК"
     gists:
       index:
         header: "Все гисты"
