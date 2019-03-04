@@ -1,8 +1,6 @@
 document.addEventListener('turbolinks:load', function() {
-    // var password = document.getElementById('password-field').value;
-    // var password_confirmation = document.getElementById('password-confirmation-field').value;
     var password_selector = document.querySelector('#password-confirmation-field');
-
+    
     if (password_selector) { password_selector.addEventListener('input', matchPasswordConfirmation) }
 });
 
