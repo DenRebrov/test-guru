@@ -1,5 +1,8 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 <h2><%= t('.counter', number: @test_passage.question_number, total: @test_passage.total_questions) %></h2>
+<div class="progress">
+  <div class="bar"></div>
+</div>
 
 <p><b><%= @test_passage.current_question.body %></b></p>
 
@@ -12,5 +15,7 @@
   <% end %>
 
   <p><%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post %></p>
-  <p><%= form.submit 'Next' %></p>
+  <p><%= form.submit 'Next',
+                     data: { progress: (@test_passage.question_number - 1) * 100 / @test_passage.total_questions },
+                     id: 'start_progress_bar' %></p>
 <% end %>

@@ -98,12 +98,16 @@ en:
         success: "Test was succesfully created"
       update:
         success: "Test was succesfully updated"
+      update_inline:
+        success: "Test was succesfully updated"
       destroy:
         success: "Test was succesfully destroyed"
       test:
         choice: "Are you sure?"
         edit: "Edit"
         delete: "Delete"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Gists"

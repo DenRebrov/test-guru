@@ -1,6 +1,8 @@
 <h1><%= t('.header') %></h1>
 <p><h3><%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-primary', style: 'color: white' %></h3></p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table">
   <thead>
   <tr>

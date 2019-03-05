@@ -1,4 +1,7 @@
-<%= form_with model: [:admin, @test], local: true do |form| %>
+<%= form_with model: [:admin, @test],
+              data: { test_id: @test.id },
+              id: 'common_form_with',
+              local: true do |form| %>
   <%= render 'shared/errors', resource: @test %>
 
   <p>
@@ -16,5 +19,5 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
-  <p><%= form.submit %></p>
+  <p><%= form.submit 'Update', data: { path: request.path }, id: 'common_form' %></p>
 <% end %>
