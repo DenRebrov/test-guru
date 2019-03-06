@@ -18,7 +18,3 @@ test:
 production:
   <<: *default
   database: test_guru_production
-
-#Tests.where(level: level).joins('test_passages').where(user_id: self.id)
-
-#Tests.joins(categories:).where('categories.title = ?', title).order('tests.title DESC').pluck('tests.title')
