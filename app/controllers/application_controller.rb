@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
     flash[:notice] = "Привет, #{user.first_name}"
+    user.admin? ? admin_tests_path : root_path
   end
 
   def configure_permitted_parameters
