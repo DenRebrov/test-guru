@@ -16,6 +16,10 @@ ru:
     select:
       prompt: "Выбери категорию"
 
+  feedbacks:
+    new:
+      send: "Создать фидбек"
+
   layouts:
     application:
       welcome: "Добро пожаловать %{user_name} Гуру"
@@ -27,6 +31,7 @@ ru:
     nav:
       welcome: "Добро пожаловать %{user_name}"
       admin_panel: "Панель админа"
+      feedback: "Обратная связь"
       log_out: "Выйти"
       sign_up: "Регистрация"
       log_in: "Вход"
@@ -38,6 +43,10 @@ ru:
         other: "Обнаружено %{count} ошибки"
 
   description: "Вопрос о %{title} для TestGuru"
+
+  feedbacks:
+    create:
+      feedback_create: "Обратная связь отправлена на почту администратора!"
 
   tests:
     index:
