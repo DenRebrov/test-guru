@@ -20,7 +20,11 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    correct_questions * 100 / test.correct_answers_count >= SUCCESS_RATE
+    if test.correct_answers_count == 0
+      false
+    else
+      correct_questions * 100 / test.correct_answers_count >= SUCCESS_RATE
+    end
   end
 
   def total_questions

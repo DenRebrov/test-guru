@@ -5,8 +5,10 @@
     <% if user_signed_in? %>
       <b><%= t('.welcome', user_name: current_user.email) %></b> |
 
-      <%= link_to t('.admin_panel'), admin_tests_path if current_user.admin? %>
-      <%= link_to t('.feedback'), new_feedback_path %>
+      <% if current_user.admin? %>
+        <%= link_to t('.admin_panel'), admin_tests_path %> |
+      <% end %>
+      <%= link_to t('.feedback'), new_feedback_path %> |
       <%= link_to t('.log_out'), destroy_user_session_path, data: { method: :delete } %>
     <% else %>
       <%= link_to t('.sign_up'), new_user_registration_path %> |
