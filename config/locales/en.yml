@@ -16,6 +16,10 @@ en:
     select:
       prompt: "Choose category"
 
+  feedbacks:
+    new:
+      send: "Send feedback"
+
   layouts:
     application:
       welcome: "Welcome %{user_name} Guru"
@@ -27,6 +31,7 @@ en:
     nav:
       welcome: "Welcome %{user_name}"
       admin_panel: "Admin panel"
+      feedback: "Feedback"
       log_out: "Log out"
       sign_up: "Sign up"
       log_in: "Log in"
@@ -36,6 +41,10 @@ en:
         other: "%{count} errors detected"
 
   description: "A question about %{title} from TestGuru"
+
+  feedbacks:
+    create:
+      feedback_create: "Feedback send to admin email!"
 
   tests:
     index:

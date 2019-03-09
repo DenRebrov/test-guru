@@ -8,10 +8,11 @@ class User < ApplicationRecord
          :validatable,
          :confirmable
 
-  has_many :test_passages
-  has_many :tests, through: :test_passages
-  has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id'#:user_id
-  has_many :gists
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages, dependent: :destroy
+  has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
+  has_many :gists, dependent: :destroy
+  has_many :feedbacks, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true, format: { with: EMAIL_FORMAT }
 

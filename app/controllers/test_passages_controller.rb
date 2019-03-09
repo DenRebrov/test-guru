@@ -23,7 +23,7 @@ class TestPassagesController < ApplicationController
     result = GistQuestionService.new(question).call
     url = result.html_url
 
-    current_user.gists.create(question_id: question.id, url: url )
+    current_user.gists.create(question_id: question.id, url: url)
     
     redirect_to @test_passage, notice: t('.success', gist_url: url)
   end
