@@ -27,6 +27,15 @@ class TestPassage < ApplicationRecord
     end
   end
 
+  def first_try?
+    #if user.attempt == 1
+    #  user.attempt = 0
+    #  true
+    #else
+    #  false
+    #end
+  end
+
   def total_questions
     test.questions.size
   end

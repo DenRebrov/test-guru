@@ -1,0 +1,6 @@
+<h1><%= t('.title', title: @badge.title) %></h1>
+
+<p><%#= render partial: 'admin/questions/question', collection: @questions %></p>
+
+<%= link_to t('.edit'), edit_admin_badge_path(@badge) %> |
+<%= link_to t('.back'), admin_badges_path %>

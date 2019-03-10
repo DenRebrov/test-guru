@@ -16,7 +16,14 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def result; end
+  def result
+    # def select_badge(rule)
+    #   @badge = Badge.where()
+    # end
+    #
+    #@badge = Badge.where()
+    #current_user.badges.push(@badge)
+  end
 
   def gist
     question = @test_passage.current_question

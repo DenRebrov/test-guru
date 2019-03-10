@@ -78,9 +78,10 @@ ru:
 
   admin:
     nav:
-      header: "Панель администратора TestGuru"
+      header: "Панель администратора TestGuru."
       welcome: "Добро пожаловать %{admin_name}"
       admin_panel: "Панель админа"
+      badge_panel: "Редактор бейджев"
       guru: "Гуру"
       logout: "Выход"
       gists_table: "Гисты"

@@ -76,9 +76,10 @@ en:
 
   admin:
     nav:
-      header: "Admin panel TestGuru"
+      header: "Admin panel TestGuru."
       welcome: "Welcome %{admin_name}"
       admin_panel: "Admin panel"
+      badge_panel: "Badge editor"
       guru: "Guru"
       logout: "Exit"
       gists_table: "Gists"

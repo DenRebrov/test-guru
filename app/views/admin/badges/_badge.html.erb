@@ -1,0 +1,20 @@
+<tbody>
+<tr>
+  <td class="align-middle">
+    <h4>
+      <%#= image_tag(badge_image(badge), class: 'img-icon') %>
+      <%= link_to badge.title, admin_badge_path(badge), class: 'label label-primary', style: 'color: white;' %>
+    </h4>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('.edit'), edit_admin_badge_path(badge), class: 'btn btn-default' %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('.delete'),
+                admin_badge_path(badge),
+                method: :delete,
+                data: { confirm: t('.choice') },
+                class: 'btn btn-danger', style: 'color: white' %>
+  </td>
+</tr>
+</tbody>

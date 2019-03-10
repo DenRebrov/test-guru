@@ -1,0 +1,12 @@
+<h1><%= t('.header') %></h1>
+<%#= render 'shared/errors', resource: @badge %>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th><%= t('.title') %></th>
+  </tr>
+  </thead>
+
+  <%= render @badges %>
+</table>
