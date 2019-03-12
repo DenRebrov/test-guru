@@ -1,5 +1,6 @@
 class Admin::BadgesController < Admin::BaseController
 
+  before_action :authenticate_user!
   before_action :find_badge, only: %i[show edit update destroy]
 
   def index

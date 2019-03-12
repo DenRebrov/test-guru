@@ -2,8 +2,8 @@
 <tr>
   <td class="align-middle">
     <h4>
-      <%#= image_tag(badge_image(badge), class: 'img-icon') %>
-      <%= link_to badge.title, admin_badge_path(badge), class: 'label label-primary', style: 'color: white;' %>
+      <%= image_tag(badge_image(badge), class: 'img-icon') %>
+      <%= link_to badge.title, admin_badge_path(badge), class: badge_color(badge.rule_type), style: 'color: white;' %>
     </h4>
   </td>
   <td class="align-middle">

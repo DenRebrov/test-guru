@@ -35,12 +35,19 @@ en:
       log_out: "Log out"
       sign_up: "Sign up"
       log_in: "Log in"
+      badge_panel: "Badges"
     errors:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
   description: "A question about %{title} from TestGuru"
+
+  badges:
+    index:
+      my_badges: "My badges"
+      title: "Badge name"
+      badges_all: "All badges"
 
   feedbacks:
     create:
@@ -64,6 +71,7 @@ en:
       congratulations: "Congratulations! You succesfully complete test!"
       lose: "Unfortunately you did not pass... ((("
       back: "Back to the test list"
+      add_badge: "You receive a badge!"
     show:
       header: "Pass the test on the topic: %{title}"
       counter: "Question № %{number} of %{total}"
@@ -75,6 +83,24 @@ en:
       failure: "An error occurred while saving gist"
 
   admin:
+    badges:
+      badge:
+        edit: "Edit"
+        delete: "Delete"
+        choice: "Are you sure?"
+      form:
+        create: "Create"
+      index:
+        header: "Badge editor"
+        new_badge: "New badge"
+        title: "Badge name"
+        actions: "Actions"
+      new:
+        create: "Create badge"
+        back: "Back"
+      edit:
+        create: "Edit badge"
+        back: "Back"
     nav:
       header: "Admin panel TestGuru."
       welcome: "Welcome %{admin_name}"

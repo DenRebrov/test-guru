@@ -35,6 +35,7 @@ ru:
       log_out: "Выйти"
       sign_up: "Регистрация"
       log_in: "Вход"
+      badge_panel: "Награды"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -43,6 +44,12 @@ ru:
         other: "Обнаружено %{count} ошибки"
 
   description: "Вопрос о %{title} для TestGuru"
+
+  badges:
+    index:
+      my_badges: "Мои награды"
+      title: "Имя"
+      badges_all: "Все существующие награды"
 
   feedbacks:
     create:
@@ -66,6 +73,7 @@ ru:
       congratulations: "Поздравляем! Вы успешно сдали тест!"
       lose: "К сожалению вы не сдали... ((("
       back: "Вернуться к списку тестов"
+      add_badge: "Вы получили награду!"
     show:
       header: "Проходим тест по теме: %{title}"
       counter: "Вопрос № %{number} из %{total}"
@@ -77,11 +85,29 @@ ru:
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
+    badges:
+      badge:
+        edit: "Редактировать"
+        delete: "Удалить"
+        choice: "Вы уверены?"
+      form:
+        create: "Создать"
+      index:
+        header: "Редактор наград"
+        new_badge: "Новая награда"
+        title: "Имя"
+        actions: "Действия"
+      new:
+        create: "Создать награду"
+        back: "Назад"
+      edit:
+        create: "Изменить награду"
+        back: "Назад"
     nav:
       header: "Панель администратора TestGuru."
       welcome: "Добро пожаловать %{admin_name}"
       admin_panel: "Панель админа"
-      badge_panel: "Редактор бейджев"
+      badge_panel: "Редактор наград"
       guru: "Гуру"
       logout: "Выход"
       gists_table: "Гисты"

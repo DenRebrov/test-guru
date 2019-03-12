@@ -11,5 +11,5 @@
   </tr>
   </thead>
 
-  <%= render @badges %>
+  <%= render @badges.order(id: :desc) %>
 </table>

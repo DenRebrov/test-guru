@@ -17,12 +17,15 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    # def select_badge(rule)
-    #   @badge = Badge.where()
-    # end
-    #
-    #@badge = Badge.where()
-    #current_user.badges.push(@badge)
+    if @test_passage.success?
+      @test_passage.update(passed: true)
+
+      @badge = BadgeService.new(@test_passage).find_badges
+      if @badge.present?
+        current_user.badges.push(@badge)
+        flash[:notice] = t('.add_badge')
+      end
+    end
   end
 
   def gist

@@ -9,23 +9,19 @@
           <%= form.text_field :title, id: :badge_title, class: 'form-control' %>
         </p>
 
-        <p>
-          <%= form.label :rule_type %>
-          <%#= form.collection_select :rule_type, id: :badge_rule_type, class: 'form-control' %>
-          <%= form.collection_select :rule_type, Badge.all, :id, :rule_type, prompt: true, class: 'form-control' %>
-        </p>
+        <div class="form-group switch-field">
+          <%= form.label "Category" %>
+          <%= form.radio_button :rule_type, 'category', id: :rule_type_category, checked: true %>
 
-        <p>
-          <%= form.label :rule_value %>
-          <%= form.text_field :rule_value, id: :badge_rule_value, class: 'form-control' %>
-        </p>
+          <%= form.label "Attempt" %>
+          <%= form.radio_button :rule_type, 'attempt', id: :rule_type_attempt %>
 
-        <p>
-          <%#= form.label :image_url %>
-          <%#= form.file_field :image_url, id: :badge_image_url, class: 'form-control' %>
-        </p>
+          <%= form.label "Level" %>
+          <%= form.radio_button :rule_type, 'level', id: :rule_type_level %>
+        </div>
 
-        <p><%= form.submit 'Update', class: 'btn btn-primary' %></p>
+
+        <p><%= form.submit t('.create'), class: 'btn btn-primary' %></p>
       </div>
     <% end %>
   </div>
