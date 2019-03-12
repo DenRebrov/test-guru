@@ -8,20 +8,23 @@ class BadgeService
 
   def find_badges
     badges = []
-    Badge.all.each do |badge|
-      case badge.rule_type
-        when 'category'
-          badges << badge if all_in_category?("Backend")
-        when 'attempt'
-          badges << badge if first_attempt?(@test)
-        when 'level'
-          badges << badge if certain_level?(1)
-      end
-    end
+    Badge.all.each {|badge| send("#{badge.rule_type}_award", badges, badge)}
     badges
   end
 
   private
+
+  def category_award(badges, badge)
+    badges << badge if all_in_category?("Backend")
+  end
+
+  def attempt_award(badges, badge)
+    badges << badge if first_attempt?(@test)
+  end
+
+  def level_award(badges, badge)
+    badges << badge if certain_level?(1)
+  end
 
   def all_in_category?(category_name)
     Test.categories_by_name(category_name).count == 0 ? false :
@@ -29,12 +32,11 @@ class BadgeService
   end
   
   def first_attempt?(test)
-    if @user.tests.where(id: test.id).count == 1
-      true if @test_passage.passed == true
-    end
+    @user.tests.where(id: test.id).count == 1 && @test_passage.passed == true
   end
 
   def certain_level?(level)
-    Test.easy.count == 0 ? false : Test.easy.count == @user.completeded_tests.where(level: level).count
+    Test.where(level: level).count == 0 ? false :
+        Test.where(level: level).count == @user.completeded_tests.where(level: level).count
   end
 end
