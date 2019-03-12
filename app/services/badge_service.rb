@@ -33,7 +33,7 @@ class BadgeService
   end
   
   def first_attempt?(test)
-    @user.tests.where(id: test.id).count == 1 && @test_passage.passed == true
+    @user.tests.where(id: @test_passage.test_id).count == 1 && @test_passage.passed == true
   end
 
   def certain_level?(level)
