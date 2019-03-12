@@ -10,10 +10,7 @@ class BadgeService
   end
 
   def find_badges
-    #badges = []
-    #Badge.all.each {|badge| send("#{badge.rule_type}_award", badges, badge)}
-    Badge.all.map { |badge| send("#{badge.rule_type}_award", badge) }
-    #badges
+    Badge.all.map { |badge| send("#{badge.rule_type}_award", badge) }.compact
   end
 
   private
