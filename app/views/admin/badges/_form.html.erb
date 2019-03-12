@@ -1,0 +1,28 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <%= form_with model: [:admin, @badge], local: true do |form| %>
+      <div class="form-group">
+        <%= render 'shared/errors', resource: @badge %>
+
+        <p>
+          <%= form.label :title %>
+          <%= form.text_field :title, id: :badge_title, class: 'form-control' %>
+        </p>
+
+        <div class="form-group switch-field">
+          <%= form.label "Category" %>
+          <%= form.radio_button :rule_type, 'category', id: :rule_type_category, checked: true %>
+
+          <%= form.label "Attempt" %>
+          <%= form.radio_button :rule_type, 'attempt', id: :rule_type_attempt %>
+
+          <%= form.label "Level" %>
+          <%= form.radio_button :rule_type, 'level', id: :rule_type_level %>
+        </div>
+
+
+        <p><%= form.submit t('.create'), class: 'btn btn-primary' %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

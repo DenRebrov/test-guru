@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1><%= t('.my_badges') %></h1>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th><%= t('.title') %></th>
+      </tr>
+      </thead>
+
+      <%= render partial: '/badges/user_badge', collection: @user_badges.order(created_at: :asc) %>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <h1><%= t('.badges_all') %></h1>
+
+    <%= render partial: '/badges/badge', collection: @badges.order(id: :desc)  %>
+  </div>
+</div>

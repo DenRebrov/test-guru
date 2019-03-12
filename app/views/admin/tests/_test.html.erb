@@ -1,12 +1,12 @@
 <tbody>
   <tr>
     <td class="align-middle">
-      <b>
+      <h4>
         <%= link_to test.title,
                      admin_test_path(test),
                      class: 'test-title',
                      data: { test_id: test.id } %>
-      </b>
+      </h4>
       <%= render 'form_inline', test: test == @test ? @test : test %>
     </td>
     <td class="align-middle"><%= test_level(test) %></td>
