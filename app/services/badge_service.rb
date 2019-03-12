@@ -1,5 +1,8 @@
 class BadgeService
 
+  CERTAIN_LEVEL = 1
+  CATEGORY_TYPE = "Backend"
+
   def initialize(test_passage)
     @test_passage = test_passage
     @user = test_passage.user
@@ -7,23 +10,24 @@ class BadgeService
   end
 
   def find_badges
-    badges = []
-    Badge.all.each {|badge| send("#{badge.rule_type}_award", badges, badge)}
-    badges
+    #badges = []
+    #Badge.all.each {|badge| send("#{badge.rule_type}_award", badges, badge)}
+    Badge.all.map { |badge| send("#{badge.rule_type}_award", badge) }
+    #badges
   end
 
   private
 
-  def category_award(badges, badge)
-    badges << badge if all_in_category?("Backend")
+  def category_award(badge)
+    badge if all_in_category?(CATEGORY_TYPE)
   end
 
-  def attempt_award(badges, badge)
-    badges << badge if first_attempt?(@test)
+  def attempt_award(badge)
+    badge if first_attempt?(@test)
   end
 
-  def level_award(badges, badge)
-    badges << badge if certain_level?(1)
+  def level_award(badge)
+    badge if certain_level?(CERTAIN_LEVEL)
   end
 
   def all_in_category?(category_name)
