@@ -11,6 +11,7 @@ class Test < ApplicationRecord
   scope :categories_by_name, -> (name) { joins(:category).where(categories: {title: name}) }
 
   validates :title, presence: true, uniqueness: { scope: :level }
+  validates :timer, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
   validate :validate_max_level, on: :create
 
@@ -36,6 +37,10 @@ class Test < ApplicationRecord
     end
 
     result == questions.size ? true : false
+  end
+
+  def end_time
+    Time.now + 4
   end
 
   private

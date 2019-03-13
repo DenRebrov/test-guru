@@ -1,4 +1,16 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="row">
+  <h1>
+    <div class="col-md-6">
+      <%= t('.header', title: @test_passage.test.title) %>
+    </div>
+    <div class="col-md-6">
+      <b>
+        <%#= content_tag :span, '', id: 'time', data: { start_time: @test_passage.created_at.to_i, end_time: @test_passage.test.timer } %>
+      </b>
+    </div>
+  </h1>
+</div>
+
 <h2><%= t('.counter', number: @test_passage.question_number, total: @test_passage.total_questions) %></h2>
 <div class="progress">
   <div class="bar"></div>
@@ -18,4 +30,17 @@
   <p><%= form.submit 'Next',
                      data: { progress: (@test_passage.question_number - 1) * 100 / @test_passage.total_questions },
                      id: 'start_progress_bar' %></p>
+
+  <script type="text/javascript">
+      function timer(){
+          var obj=document.getElementById('timer_inp');
+          obj.innerHTML--;
+
+          if(obj.innerHTML==0){window.location.replace(window.location.href + '/result');setTimeout(function(){},1000);}
+          else{setTimeout(timer,1000);}
+      }
+      setTimeout(timer,1000);
+  </script>
+  <div id="timer_inp"><%= @test_passage.test.timer %></div>
+
 <% end %>
