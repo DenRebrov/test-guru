@@ -39,10 +39,6 @@ class Test < ApplicationRecord
     result == questions.size ? true : false
   end
 
-  def end_time
-    Time.now + 4
-  end
-
   private
 
   def validate_max_level
