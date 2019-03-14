@@ -5,7 +5,7 @@
     </div>
     <div class="col-md-6">
       <b>
-        <%#= content_tag :span, '', id: 'time', data: { start_time: @test_passage.created_at.to_i, end_time: @test_passage.test.timer } %>
+        <%= content_tag :div, '', id: 'timer', data: { start_time: @test_passage.created_at.to_i, end_time: @test_passage.test.timer } %>
       </b>
     </div>
   </h1>
@@ -30,17 +30,4 @@
   <p><%= form.submit 'Next',
                      data: { progress: (@test_passage.question_number - 1) * 100 / @test_passage.total_questions },
                      id: 'start_progress_bar' %></p>
-
-  <script type="text/javascript">
-      function timer(){
-          var obj=document.getElementById('timer_inp');
-          obj.innerHTML--;
-
-          if(obj.innerHTML==0){window.location.replace(window.location.href + '/result');setTimeout(function(){},1000);}
-          else{setTimeout(timer,1000);}
-      }
-      setTimeout(timer,1000);
-  </script>
-  <div id="timer_inp"><%= @test_passage.test.timer %></div>
-
 <% end %>
