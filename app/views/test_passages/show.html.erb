@@ -1,4 +1,16 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="row">
+  <h1>
+    <div class="col-md-6">
+      <%= t('.header', title: @test_passage.test.title) %>
+    </div>
+    <div class="col-md-6">
+      <b>
+        <%= content_tag :div, '', id: 'timer', data: { start_time: @test_passage.created_at.to_i, end_time: @test_passage.test.timer } %>
+      </b>
+    </div>
+  </h1>
+</div>
+
 <h2><%= t('.counter', number: @test_passage.question_number, total: @test_passage.total_questions) %></h2>
 <div class="progress">
   <div class="bar"></div>
