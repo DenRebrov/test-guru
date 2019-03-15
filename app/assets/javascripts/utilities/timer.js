@@ -5,17 +5,16 @@ document.addEventListener('turbolinks:load', function() {
 });
 
 function startTimer(control) {
-    var x = setInterval(function() {
+    var startTime = control.dataset.startTime;
+    var endTime = control.dataset.endTime;
+    var spentTime = Math.trunc(Date.now() / 1000) - startTime;
+    var remainingTime = endTime - spentTime;
 
-        var startTime = control.dataset.startTime;
-        var endTime = control.dataset.endTime;
-        var spentTime = Math.trunc(Date.now() / 1000) - startTime;
-        var remainingTime = endTime - spentTime;
+    setInterval(function() {
 
-        control.innerHTML--;
+        remainingTime--;
 
-        if (control.innerHTML == 0) {
-            clearInterval(x)
+        if (remainingTime == 0) {
             window.location.replace(window.location.href + '/result');
         }
 
